@@ -1,3 +1,3 @@
 # Fancy-Login
 
-A fancy login page usong pure HTML and CSS
+A fancy login page using pure HTML and CSS
