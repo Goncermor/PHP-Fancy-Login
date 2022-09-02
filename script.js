@@ -1,7 +1,15 @@
 const Sleep = m => new Promise(r => setTimeout(r, m));
 
 function loaded() {
+    preLoadImage();
     backgroundLoop();   
+}
+
+function preLoadImage() {
+    for (let i = 0; i < 4; i++) {
+        let img = new Image();
+        img.src = "img/" + i + ".webp";
+    }
 }
 
 async function backgroundLoop() {
