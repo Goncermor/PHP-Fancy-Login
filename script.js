@@ -7,7 +7,7 @@ function loaded() {
 async function backgroundLoop() {
     while (true) {
         for (let i = 1; i < 4; i++) {
-            await Sleep(3000);
+            await Sleep(6000);
             console.log(i);
             document.body.style.backgroundImage = 'url("img/' + i + '.webp")';
         }
