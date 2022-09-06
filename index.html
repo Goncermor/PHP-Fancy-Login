@@ -7,14 +7,16 @@
     <title>Login</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
-</head>
-<body onload="loaded()">
+    <script src="https://www.google.com/recaptcha/api.js?render=6LfUHNQhAAAAAO4bjLnPtltN6EQZEgL9rPq3dSQm"></script>
+  </head>
+<body>
   <div class="container">
-    <form>
-      <input type="username" placeholder="Username"></input>
-      <input type="password" placeholder="Password"></input>
-      <input type="submit"></input>
-    </form>
+    <div id="form">
+      <h1>Login</h1>
+      <input id="username" type="username" placeholder="Username"></input>
+      <input id="password" type="password" placeholder="Password"></input>
+      <input type="button" onclick="send()" value="Login"></input>
+    </div>
   </div>
     <div class="bg-author"><p>Image by <a href="https://unsplash.com/@andrew_svk">Andrew Svk</a></p></div>
 </body>

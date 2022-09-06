@@ -1,16 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@300&display=swap');
+
 * {
   padding: 0;
   margin: 0;
 }
+
+
 html {
   height: 100%;
   width: 100%;
 }
 
 body {
+  font-family: 'MuseoModerno';
   height: 100%;
-
-  background-image: url("img/0.webp");
+  background-image: url("img/bg.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -29,11 +33,10 @@ body {
   text-align: center;
 }
 
-form {
-  display: flex;
-  justify-content: center;
-
-  padding-top: 50px;
+#form {
+  user-select: none;
+  text-align: center;
+  padding-top: 15px;
   border-radius: 15px;
   border-width: 1px;
   border-color: #ffffff6a;
@@ -45,6 +48,10 @@ form {
   box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.75);
 }
 
+h1 {
+  color: #fff;
+}
+
 .container {
   height: 100%;
   width: 100%;
@@ -53,26 +60,40 @@ form {
   justify-content: center;
 }
 
+::placeholder {
+  color: #a7a7a7;
+}
+
 
 input {
-  
+  font-family: 'MuseoModerno';
+  font-size: 16px;
+  color:#cacaca;
+  transition: border-color .3s ease-in-out;
   background-color: transparent;
   border-width: 1px;
   border-radius: 6px;
-  border-color: #afafaf;
+  border-color: #ffffff6a;
+  outline: none;
+  border-style: solid;
   text-decoration: none;
 }
 
-
 input[type=username], input[type=password] {
-  width: 100px;
-  height: 26px;
+  letter-spacing: 0.04em;
+  width: 180px;
+  height: 28px;
   padding-left: 6px;
-  margin-top: 15px;
+  margin-top: 16px;
+}
+
+input[type=username]:focus, input[type=password]:focus {
+  border-color: #c4c4c4;
 }
 
 
-input[type=submit] {
+input[type=button] {
+  margin-top: 25px;
   width: 100px;
-  height: 26px;
+  height: 28px;
 }
