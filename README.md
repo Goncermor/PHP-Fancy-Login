@@ -1,6 +1,6 @@
 # PHP Fancy Login
 
-## ✅ Working (More functionalities comming soon)
+## ✅ Working
 
 🔴 Live demo: <a href="https://demo.goncermor.com/fancy-login/">Here</a>
 
