@@ -1,6 +1,6 @@
 # Fancy-Login
 
-## ⚠️ Not finished
+## ✅ Working (More functionalities comming soon)
 
 A fancy login page using:
 * HTML
