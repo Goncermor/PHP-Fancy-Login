@@ -1,4 +1,4 @@
-# Fancy-Login
+# PHP Fancy Login
 
 ## ✅ Working (More functionalities comming soon)
 
