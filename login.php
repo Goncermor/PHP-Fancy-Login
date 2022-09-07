@@ -5,7 +5,7 @@ $encryption_key = "Goncermor-Fancy-Login"; // here a password for the cookie dat
 if (isset($_COOKIE['data'])) {
     $cookieJson = json_decode(openssl_decrypt($_COOKIE['data'], "AES-128-CTR", $encryption_key, 0, $encryption_iv));
 if (ProcessInfo($cookieJson->username, $cookieJson->password) === true) {
-  http_response_code(308);
+  http_response_code(303);
   header("Location: https://goncermor.com/");
   die;
 } else {
