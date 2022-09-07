@@ -4,8 +4,8 @@ $encryption_key = "Goncermor-Fancy-Login"; // here a password for the cookie dat
 
 if (isset($_COOKIE['data'])) {
     $cookieJson = json_decode(openssl_decrypt($_COOKIE['data'], "AES-128-CTR", $encryption_key, 0, $encryption_iv));
-if (ProcessInfo($cookieJson->user, $cookieJson->password) === true) {
-  http_response_code(201);
+if (ProcessInfo($cookieJson->username, $cookieJson->password) === true) {
+  http_response_code(308);
   header("Location: https://goncermor.com/");
   die;
 } else {
@@ -16,8 +16,7 @@ if (ProcessInfo($cookieJson->user, $cookieJson->password) === true) {
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
   $input = file_get_contents("php://input");
   $json = json_decode($input);
-  $status = ProcessInfo($json->username, $json->password);
-  if ($status === true) {
+  if (ProcessInfo($json->username, $json->password) === true) {
     http_response_code(201);
     $encryption = openssl_encrypt($input, "AES-128-CTR", $encryption_key, 0, $encryption_iv);
     echo json_encode(array('status' => true, 'data' => $encryption));
