@@ -9,7 +9,7 @@ if (ProcessInfo($cookieJson->username, $cookieJson->password) === true) {
   header("Location: https://goncermor.com/");
   die;
 } else {
-  http_response_code(401);
+  http_response_code(403);
   unset($_COOKIE['data']); 
   setcookie('data', null, -1, '/'); 
 }}
@@ -21,18 +21,17 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     $encryption = openssl_encrypt($input, "AES-128-CTR", $encryption_key, 0, $encryption_iv);
     echo json_encode(array('status' => true, 'data' => $encryption));
   } else {
-    http_response_code(401);
+    http_response_code(403);
     echo json_encode(array('status' => false));
   }
   die;
 }
 function ProcessInfo($user, $password) {
-  return true;
-
+ 
   // place here the code to check if the user exists in your database
   // return true to save the login and continue
   // return false to send invalid password
 
 }
-echo file_get_contents("index.html");
+echo file_get_contents("login.html");
 ?>
