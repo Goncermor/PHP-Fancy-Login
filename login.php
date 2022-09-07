@@ -1,11 +1,12 @@
 <?php
-$encryption_iv = '0744641209477128';
-$encryption_key = "Goncermor-Fancy-Login";
+$encryption_iv = '0744641209477128'; // random 16 digit number
+$encryption_key = "Goncermor-Fancy-Login"; // here a password for the cookie data (something secure)
+
 if (isset($_COOKIE['data'])) {
     $cookieJson = json_decode(openssl_decrypt($_COOKIE['data'], "AES-128-CTR", $encryption_key, 0, $encryption_iv));
 if (ProcessInfo($cookieJson->user, $cookieJson->password) === true) {
   http_response_code(201);
-  header("Location: https://google.com/");
+  header("Location: https://goncermor.com/");
   die;
 } else {
   http_response_code(401);
@@ -28,8 +29,11 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 }
 function ProcessInfo($user, $password) {
   return true;
-  // place here the code to check if the user exists
+
+  // place here the code to check if the user exists in your database
   // return true to save the login and continue
   // return false to send invalid password
+
 }
+echo file_get_contents("index.html");
 ?>

@@ -21,7 +21,7 @@ async function send() {
     return;
   } else {console.log("Password is not valid.");}
   let xhr = new XMLHttpRequest();
-  xhr.open("POST", "http://demo.goncermor.com/", false);
+  xhr.open("POST", "https://demo.goncermor.com/fancy-login/login.php", false);
   xhr.setRequestHeader('Content-Type', 'application/json');
   console.log("Request opened...");
   let data = JSON.stringify({
